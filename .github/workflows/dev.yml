@@ -12,29 +12,29 @@ on:
 
 jobs:
 
-  # build:
+  build:
 
-  #   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  #   steps:
+    steps:
 
-  #     - name: Setup Node.js
+      - name: Setup Node.js
 
-  #       uses: actions/setup-node@v2
+        uses: actions/setup-node@v2
 
-  #       with:
+        with:
 
-  #         node-version: '16'
+          node-version: '16'
 
  
-  #     - name: Install Node.js Dependencies
+      - name: Install Node.js Dependencies
 
-  #       run: npm install
+        run: npm install
 
 
-  #     - name: Build Nuxt
+      - name: Build Nuxt
 
-  #       run: npm run build
+        run: npm run build
 
 
   deploy:
