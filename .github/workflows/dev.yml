@@ -24,7 +24,7 @@ jobs:
 
         with:
 
-          node-version: '16'
+          node-version: '18'
 
 
   deploy:
@@ -77,4 +77,4 @@ jobs:
 
           script:
 
-            chown -R root ~/nuxt-express && cd ~/nuxt-express && npm install && npm run build && pm2 npm start
+            chown -R root ~/nuxt-express && cd ~/nuxt-express && npm install && npm run build && pm2 start npm -- start
