@@ -26,16 +26,6 @@ jobs:
 
           node-version: '16'
 
- 
-      - name: Install Node.js Dependencies
-
-        run: npm install
-
-
-      - name: Build Nuxt
-
-        run: npm run build
-
 
   deploy:
 
