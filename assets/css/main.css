@@ -8,6 +8,7 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
+  min-width: 628px;
 }
 
 .sidebar {
@@ -73,6 +74,13 @@ main {
   align-items: flex-start;
   height: calc(100vh - 178px);
   width: 100%;
+}
+
+@media screen and (max-width: 628px) {
+  .calendar-wrapper {
+    height: auto;
+    width: 100%;
+  }
 }
 
 .calendar {

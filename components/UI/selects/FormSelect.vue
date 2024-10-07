@@ -9,11 +9,12 @@
                     :type="type"
                     :placeholder="placeholder"
                     :readonly="readonly"
+                    :disabled="inactive"
                     @change="inputHandler"
                     @click="action"
                     >
-                <div @click="clearField">
-                    <svg-icon v-if="input !== 'Не выбрано'" color="#64748b" class="flex absolute top-5 right-0 h-9 w-9 mr-0" />
+                <div v-if="!inactive" @click="clearField">
+                    <svg-icon v-if="input !== 'Не выбрано'" color="#64748b" class="flex absolute top-5 right-0 h-9 w-9 -mt-0.5 mr-0" />
                 </div>
             </div>
                 <ul v-if="isOpen && currentDic != ''" 
@@ -35,6 +36,7 @@ import SvgIcon from "../../UI/icons/SvgIcon.vue";
 
     export default {
         props: {
+            value: { type: String, default: "" },
             type: { type: String, default: "text" },
             title: { type: String, default: "ddd" },
             placeholder: { type: String, default: "Select" },
@@ -43,6 +45,7 @@ import SvgIcon from "../../UI/icons/SvgIcon.vue";
             dictionary: { type: [String, Array], require: true },
             withoutFilter: { type: Boolean, default: false },
             readonly: { type: Boolean, default: true },
+            inactive: { type: Boolean, default: false },
         },
 
         components: {
@@ -59,13 +62,15 @@ import SvgIcon from "../../UI/icons/SvgIcon.vue";
         },
 
         mounted() {
+            if (this.value !== "") {
+                this.input = this.value;
+            }
             if (typeof this.dictionary == "string") {
                 if (this.withoutFilter) {
                     this.currentDic = [{ id: null, name: "Не выбрано"}, ...loadDic(this.dictionary)]
                 } else {
                     this.currentDic = loadDic(this.dictionary);
                 }
-                
             }
             return;
         },

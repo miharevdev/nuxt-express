@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-start items-center flex-wrap min-h-20 h-20 w-full p-5 pt-6 sm:pt-2 gap-2 sm:gap-4 bg-gray-100 text-gray-300" :class="[rounded ? 'rounded-md' : '']">
+    <div class="flex justify-start items-center flex-wrap min-h-20 h-20 w-full p-5 pt-6 sm:pt-2 gap-2 sm:gap-4 bg-slate-50 text-gray-300" :class="[rounded ? 'rounded-md' : '']">
         <form-button 
             v-for="button in buttonUnits" 
             :key="button.key" 

@@ -14,7 +14,7 @@
         <nav class="h-full w-full md:pl-6 ">
             <div v-for="item in sidebar" :key="item.icon">
                 <!-- <sidebaritem v-if="$getAccess(item.rule)" :item="item" @itemHandler="itemHandler" :color="itemName === item.icon ? '#1e293b' : '#64748b'" /> -->
-                <sidebaritem :item="item" @itemHandler="itemHandler" :color="itemName === item.icon ? '#1e293b' : '#64748b'" />
+                <sidebaritem :item="item" @itemHandler="itemHandler" :color="itemName === item.icon ? '#38bdf8' : '#64748b'" />
             </div>
         </nav>
     </div>

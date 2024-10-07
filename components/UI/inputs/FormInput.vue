@@ -21,6 +21,7 @@
 <script>
     export default {
         props: {
+            value: { type: String, default: "" },
             type: { type: String, default: "text" },
             title: { type: String, default: "" },
             placeholder: { type: String, default: "" },
@@ -33,6 +34,20 @@
         data() {
             return {
                 input: ""
+            }
+        },
+
+        watch: {
+            value: {
+                handler(val) {
+                    this.input = val;
+                }
+            }
+        },
+
+        mounted() {
+            if (this.value !== "") {
+                this.input = this.value;
             }
         },
 
